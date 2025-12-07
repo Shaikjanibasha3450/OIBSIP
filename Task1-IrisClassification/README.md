@@ -1,4 +1,4 @@
-🌸 Iris Flower Classification with Machine Learning
+# 🌸 Iris Flower Classification with Machine Learning
 
 **AICTE OASIS INFOBYTE - Data Science Internship Task 1**
 
@@ -17,7 +17,7 @@ This project builds a machine learning model to classify iris flowers into three
 ## 🔬 Machine Learning Models Tested
 
 | Model | Accuracy | Performance |
-|---|---|---|
+|-------|----------|-------------|
 | Random Forest | 88.89% | Good ensemble approach |
 | Logistic Regression | 91.11% | Linear classification |
 | **SVM (RBF Kernel)** | **93.33%** | **Best Performance ✓** |
@@ -25,6 +25,14 @@ This project builds a machine learning model to classify iris flowers into three
 ## 📈 Model Performance
 
 ### Confusion Matrix (SVM)
+
+```
+Predicted    Setosa  Versicolor  Virginica
+Actual
+Setosa          15          0          0
+Versicolor       0         14          1
+Virginica        0          2         13
+```
 
 - **Setosa Classification**: 100% (15/15 correct)
 - **Versicolor Classification**: 93.3% (14/15 correct)
@@ -44,9 +52,9 @@ This project builds a machine learning model to classify iris flowers into three
 
 ```
 Iris-Flower-Classification/
-├── Task_1_internship.ipynb # Complete Jupyter Notebook
-├── README.md # Project documentation
-└── requirements.txt # Python dependencies
+├── Task_1_internship.ipynb  # Complete Jupyter Notebook
+├── README.md                 # Project documentation
+└── requirements.txt          # Python dependencies
 ```
 
 ## 📋 Project Workflow
@@ -102,10 +110,26 @@ jupyter notebook Task_1_internship.ipynb
 - Real-time flower classification API
 - Deployment on web/mobile platform
 
-## 📚 Source Repository
+## 📚 Code Highlights
 
-For complete implementation and notebook, visit the main repository:
-[Iris-Flower-Classification](https://github.com/Shaikjanibasha3450/Iris-Flower-Classification)
+### Model Training Example
+
+```python
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
+
+# Train SVM model
+svm_model = SVC(kernel='rbf', random_state=42)
+svm_model.fit(X_train_scaled, y_train)
+
+# Make predictions
+y_pred = svm_model.predict(X_test_scaled)
+
+# Calculate accuracy
+accuracy = accuracy_score(y_test, y_pred)
+print(f"SVM Accuracy: {accuracy:.4f}")
+# Output: 0.9333
+```
 
 ## 📄 License
 
@@ -115,4 +139,8 @@ This project is open-source and available for educational purposes.
 
 Built as part of **AICTE OASIS INFOBYTE Data Science Internship - Task 1**
 
-**Last Updated**: December 7, 2025
+---
+
+**GitHub Repository**: [Iris-Flower-Classification](https://github.com/Shaikjanibasha3450/Iris-Flower-Classification)
+
+**Last Updated**: November 29, 2025
