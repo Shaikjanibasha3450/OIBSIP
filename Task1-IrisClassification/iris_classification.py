@@ -82,6 +82,7 @@ print("\n[STEP 4] Splitting data into training and testing sets...")
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.3, random_state=42, stratify=y
 )
+
 print(f"Training set size: {X_train.shape[0]}")
 print(f"Testing set size: {X_test.shape[0]}")
 
@@ -90,6 +91,7 @@ print("\n[STEP 5] Feature Scaling...")
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
+
 print("Features scaled successfully!")
 print("\nData preprocessing completed!")
 
@@ -134,8 +136,9 @@ print(f"   SVM Accuracy: {acc_svm:.4f}")
 print("\n" + "="*60)
 print("MODEL COMPARISON")
 print("="*60)
+
 for model_name, accuracy in results.items():
-    print(f"  {model_name:30} Accuracy: {accuracy:.4f} ({accuracy*100:.2f}%)")
+    print(f"   {model_name:30} Accuracy: {accuracy:.4f} ({accuracy*100:.2f}%)")
 
 best_model_name = max(results, key=results.get)
 best_model_accuracy = results[best_model_name]
@@ -145,6 +148,7 @@ print("="*60)
 # Step 7: Detailed Evaluation of Best Model (SVM)
 print("\n[STEP 7] Detailed Evaluation of Best Model (SVM)...")
 print("="*60)
+
 print("\nClassification Report for SVM:")
 print("="*60)
 print(classification_report(y_test, y_pred_svm, target_names=target_names))
@@ -173,6 +177,7 @@ plt.close()
 print("\n" + "="*60)
 print("PROJECT SUMMARY - IRIS FLOWER CLASSIFICATION")
 print("="*60)
+
 print(f"\nDataset: Iris Flower Classification")
 print(f"Total Samples: {len(X)}")
 print(f"Training Samples: {len(X_train)}")
@@ -180,6 +185,7 @@ print(f"Testing Samples: {len(X_test)}")
 print(f"Best Model: Support Vector Machine (SVM)")
 print(f"Test Accuracy: {acc_svm:.4f} ({acc_svm*100:.2f}%)")
 print("="*60)
+
 print("\nProject completed successfully!")
 print("AICTE OASIS INFOBYTE SIP - Data Science Internship")
 print("="*60)
